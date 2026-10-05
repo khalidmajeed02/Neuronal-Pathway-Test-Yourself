@@ -1,0 +1,232 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+<title>Neuron Signal Pathway — Revised Sequence</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<main class="app">
+  <header class="top">
+    <div>
+      <h1>Neuron Signal Pathway</h1>
+    </div>
+    <div class="top-actions">
+      <button class="ctrl primary" type="button" id="traceBtn">▶ Play</button>
+      <button class="ctrl" type="button" id="resetBtn">Reset</button>
+      <button class="ctrl accent" type="button" id="testYourselfBtn">📝 Test Yourself</button>
+    </div>
+  </header>
+
+  <div id="pathwayView">
+  <section class="layout">
+    <div class="figure-wrap">
+      <img class="figure" src="assets/approved_neuron.png" alt="Neuron with synapse and muscle ending" />
+
+      <img class="arrow-sprite dendrite-arrow" data-group="dendrite" data-order="1" src="assets/dend_1.png" alt="" style="left:64.518229%;top:15.332031%;width:2.929688%;height:5.664062%" />
+      <img class="arrow-sprite dendrite-arrow" data-group="dendrite" data-order="2" src="assets/dend_2.png" alt="" style="left:72.135417%;top:17.773438%;width:2.734375%;height:6.640625%" />
+      <img class="arrow-sprite dendrite-arrow" data-group="dendrite" data-order="3" src="assets/dend_3.png" alt="" style="left:47.005208%;top:23.046875%;width:4.166667%;height:4.199219%" />
+      <img class="arrow-sprite dendrite-arrow" data-group="dendrite" data-order="4" src="assets/dend_4.png" alt="" style="left:61.783854%;top:21.191406%;width:2.083333%;height:7.617188%" />
+      <img class="arrow-sprite dendrite-arrow" data-group="dendrite" data-order="5" src="assets/dend_5.png" alt="" style="left:67.187500%;top:25.683594%;width:4.687500%;height:7.226562%" />
+      <img class="arrow-sprite dendrite-arrow" data-group="dendrite" data-order="6" src="assets/dend_6.png" alt="" style="left:50.716146%;top:33.496094%;width:4.166667%;height:4.199219%" />
+<img class="arrow-sprite axon-arrow" data-group="axon" data-order="1" src="assets/axon_1.png" alt="" style="left:59.114583%;top:41.113281%;width:1.953125%;height:8.398438%" />
+      <img class="arrow-sprite axon-arrow" data-group="axon" data-order="2" src="assets/axon_2.png" alt="" style="left:62.174479%;top:41.113281%;width:2.018229%;height:8.398438%" />
+      <img class="arrow-sprite myelin-arrow" data-group="myelin" data-order="1" src="assets/myelin_1.png" alt="" style="left:63.541667%;top:50.390625%;width:2.799479%;height:7.617188%" />
+      <img class="arrow-sprite myelin-arrow" data-group="myelin" data-order="2" src="assets/myelin_2.png" alt="" style="left:63.541667%;top:57.812500%;width:2.799479%;height:8.007812%" />
+      <img class="arrow-sprite myelin-arrow" data-group="myelin" data-order="3" src="assets/myelin_3.png" alt="" style="left:63.867188%;top:65.625000%;width:3.125000%;height:9.277344%" />
+      <img class="arrow-sprite myelin-arrow" data-group="myelin" data-order="4" src="assets/myelin_4.png" alt="" style="left:64.062500%;top:74.511719%;width:2.929688%;height:8.105469%" />
+
+      <svg class="overlay" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+        <defs>
+          <clipPath id="somaClip"><ellipse cx="965" cy="360" rx="118" ry="102"/></clipPath>
+          <clipPath id="postSynapseClip"><rect x="175" y="292" width="410" height="188" rx="52"/></clipPath>
+          <clipPath id="muscleClip"><rect x="625" y="918" width="650" height="106"/></clipPath>
+        </defs>
+
+
+        <g id="postSynapsePulseLayer" class="post-synapse-pulse-layer" clip-path="url(#postSynapseClip)">
+          <image href="assets/approved_neuron.png" x="0" y="0" width="1536" height="1024"/>
+        </g>
+
+
+        <g id="synapseFx">
+          <circle class="nt-dot" id="nt1" r="5"/>
+          <circle class="nt-dot" id="nt2" r="5"/>
+          <circle class="nt-dot" id="nt3" r="5"/>
+          <circle class="nt-dot" id="nt4" r="5"/>
+          <circle class="nt-dot" id="nt5" r="5"/>
+          <circle class="nt-dot" id="nt6" r="5"/>
+          <ellipse class="receptor-ring" id="rec1" cx="328" cy="299" rx="14" ry="17"/>
+          <ellipse class="receptor-ring" id="rec2" cx="365" cy="301" rx="14" ry="17"/>
+          <ellipse class="receptor-ring" id="rec3" cx="401" cy="301" rx="14" ry="17"/>
+          <ellipse class="receptor-ring" id="rec4" cx="436" cy="299" rx="14" ry="17"/>
+        </g>
+
+        <g id="somaPulseLayer" class="soma-pulse-layer" clip-path="url(#somaClip)">
+          <image href="assets/approved_neuron.png" x="0" y="0" width="1536" height="1024"/>
+        </g>
+<rect id="muscleMask" x="625" y="922" width="650" height="102" fill="#fff" opacity="0"/>
+        <g id="muscleContractLayer" clip-path="url(#muscleClip)" opacity="0">
+          <image href="assets/approved_neuron.png" x="0" y="0" width="1536" height="1024"/>
+        </g>
+      </svg>
+
+      <svg class="label-overlay" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
+
+        <!-- 01: Synapse -->
+        <g class="label-stage" data-label-stage="synapse">
+          <g class="diagram-label">
+            <path class="label-line" d="M 486 76 L 392 92"/>
+            <rect class="label-box" x="486" y="54" width="145" height="42" rx="10"/>
+            <text class="label-text" x="500" y="81">Axon branch</text>
+          </g>
+
+          <g class="diagram-label">
+            <path class="label-line" d="M 272 168 L 320 220"/>
+            <rect class="label-box" x="60" y="136" width="212" height="58" rx="10"/>
+            <text class="label-text" x="74" y="160">Presynaptic terminal</text>
+            <text class="label-text small" x="74" y="181">(synaptic bouton)</text>
+          </g>
+
+          <g class="diagram-label">
+            <path class="label-line" d="M 470 171 L 423 224"/>
+            <rect class="label-box" x="470" y="149" width="174" height="42" rx="10"/>
+            <text class="label-text" x="484" y="176">Synaptic vesicle</text>
+          </g>
+
+          <g class="diagram-label">
+            <path class="label-line" d="M 470 221 L 414 235"/>
+            <rect class="label-box" x="470" y="199" width="172" height="42" rx="10"/>
+            <text class="label-text" x="484" y="226">Neurotransmitter</text>
+          </g>
+
+          <g class="diagram-label">
+            <path class="label-line" d="M 214 296 L 286 299"/>
+            <rect class="label-box" x="58" y="274" width="156" height="42" rx="10"/>
+            <text class="label-text" x="72" y="301">Synaptic cleft</text>
+          </g>
+
+          <g class="diagram-label">
+            <path class="label-line" d="M 474 322 L 442 326"/>
+            <rect class="label-box" x="474" y="300" width="112" height="42" rx="10"/>
+            <text class="label-text" x="488" y="327">Receptor</text>
+          </g>
+
+          <g class="diagram-label">
+            <path class="label-line" d="M 302 529 L 286 429"/>
+            <rect class="label-box" x="92" y="507" width="210" height="42" rx="10"/>
+            <text class="label-text" x="106" y="534">Postsynaptic dendrite</text>
+          </g>
+        </g>
+
+        <!-- 02: Dendrites -->
+        <g class="label-stage" data-label-stage="dendrites">
+          <g class="diagram-label">
+            <path class="label-line" d="M 1354 286 L 1214 320"/>
+            <rect class="label-box" x="1354" y="264" width="126" height="42" rx="10"/>
+            <text class="label-text" x="1368" y="291">Dendrites</text>
+          </g>
+
+          <g class="diagram-label">
+            <path class="label-line" d="M 656 526 L 808 422"/>
+            <rect class="label-box" x="626" y="504" width="174" height="42" rx="10"/>
+            <text class="label-text" x="640" y="531">Dendritic spine</text>
+          </g>
+        </g>
+
+        <!-- 03: Cell body / soma -->
+        <g class="label-stage" data-label-stage="soma">
+          <g class="diagram-label">
+            <path class="label-line" d="M 1110 468 L 1025 399"/>
+            <rect class="label-box" x="1110" y="446" width="184" height="42" rx="10"/>
+            <text class="label-text" x="1124" y="473">Cell body / soma</text>
+          </g>
+        </g>
+
+        <!-- 04: Axon -->
+        <g class="label-stage" data-label-stage="axon">
+          <g class="diagram-label">
+            <path class="label-line" d="M 1095 516 L 973 495"/>
+            <rect class="label-box" x="1095" y="494" width="92" height="42" rx="10"/>
+            <text class="label-text" x="1109" y="521">Axon</text>
+          </g>
+        </g>
+
+        <!-- 05: Myelinated axon -->
+        <g class="label-stage" data-label-stage="myelin">
+          <g class="diagram-label">
+            <path class="label-line" d="M 1080 690 L 985 690"/>
+            <rect class="label-box" x="1080" y="668" width="188" height="42" rx="10"/>
+            <text class="label-text" x="1094" y="695">Myelinated axon</text>
+          </g>
+        </g>
+
+        <!-- 06: Motor end plate and muscle -->
+        <g class="label-stage" data-label-stage="motor">
+
+          <g class="diagram-label">
+            <path class="label-line" d="M 1178 884 L 1126 955"/>
+            <rect class="label-box" x="1178" y="862" width="174" height="42" rx="10"/>
+            <text class="label-text" x="1192" y="889">Skeletal muscle</text>
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <aside class="rail">
+      <div class="rail-kicker">Explore the pathway</div>
+      <div class="steps">
+        <div class="step-group">
+          <button class="step" type="button" data-stage="synapse">
+            <span class="step-index">01</span><span class="step-label">Synapse<small>Transmission into the neuron</small></span>
+          </button>
+          <div class="substeps">
+            <div class="substep static">Pre-synaptic terminal</div>
+            <div class="substep static">Synaptic cleft</div>
+            <div class="substep static">Post-synaptic dendrite</div>
+          </div>
+        </div>
+        <button class="step" type="button" data-stage="dendrites"><span class="step-index">02</span><span class="step-label">Dendrites</span></button>
+        <button class="step" type="button" data-stage="soma"><span class="step-index">03</span><span class="step-label">Cell body / soma</span></button>
+        <button class="step" type="button" data-stage="axon"><span class="step-index">04</span><span class="step-label">Axon</span></button>
+        <button class="step" type="button" data-stage="myelin"><span class="step-index">05</span><span class="step-label">Myelinated axon</span></button>
+        <button class="step" type="button" data-stage="motor"><span class="step-index">06</span><span class="step-label">Motor end plate and muscle contraction</span></button>
+
+      </div>
+    </aside>
+  </section>
+
+  <section class="explanation-panel full-width-explanation" id="explanationPanel" aria-live="polite" hidden>
+        <h2 class="explanation-title" id="explanationTitle">Synapse</h2>
+        <div class="explanation-body" id="explanationBody"></div>
+      </section>
+
+  <section class="reading-note" aria-label="Recommended reading and authorship">
+    <p>📖 <strong>Recommended Reading:</strong> Cunningham, J.G. &amp; Klein, B.G. (2007). <em>Textbook of Veterinary Physiology</em> (4th ed.). Saunders Elsevier, Philadelphia.</p>
+    <p>Students are encouraged to read <strong>Chapter 4 — The Neuron</strong> alongside this animation.</p>
+    <p class="creator"><strong>Created by: Dr. Khalid Abdul Majeed, Department of Physiology, UVAS</strong></p>
+  </section>
+  </div>
+
+  <section class="test-section" id="testSection" aria-label="Test yourself" hidden>
+    <div class="test-header-row">
+      <div>
+        <h2 class="test-title">Test Yourself</h2>
+        <p class="test-intro">10 questions, based only on the text and labels in the pathway. Answer all, then check your score.</p>
+      </div>
+      <button class="ctrl" type="button" id="backToPathwayBtn">← Back to Pathway</button>
+    </div>
+    <p class="test-warning" id="testWarning" hidden>⚠️ Test reset — you switched away from this tab/window while taking the test. Please complete it in one sitting.</p>
+    <div class="test-questions" id="testQuestions"></div>
+    <div class="test-actions">
+      <button class="ctrl primary" type="button" id="testCheckBtn">Check answers</button>
+      <button class="ctrl" type="button" id="testRetakeBtn">Retake test</button>
+      <span class="test-score" id="testScore" aria-live="polite"></span>
+    </div>
+  </section>
+
+</main>
+<script src="script.js"></script>
+</body>
+</html>
